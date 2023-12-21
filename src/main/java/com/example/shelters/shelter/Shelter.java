@@ -33,6 +33,10 @@ public class Shelter {
     public Shelter() {
     }
 
+    public Shelter(int shelterId) {
+        this.shelterId = shelterId;
+    }
+
     public int getShelterId() {
         return shelterId;
     }

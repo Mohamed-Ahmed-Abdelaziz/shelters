@@ -23,6 +23,18 @@ public class Adopter {
     public Adopter() {
     }
 
+    public Adopter(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
+    public Adopter(String email, String password, String name, int contact) {
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.contact = contact;
+    }
+
     public int getAdopterId() {
         return adopterId;
     }

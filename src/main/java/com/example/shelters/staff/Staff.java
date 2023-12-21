@@ -22,6 +22,28 @@ public class Staff {
     public Staff() {
     }
 
+    public Staff(String email, String password, String name, String role, int contact, Shelter shelter) {
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.role = role;
+        this.contact = contact;
+        this.shelter = shelter;
+    }
+
+    public Staff(String email, String password, String name, String role, int contact) {
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.role = role;
+        this.contact = contact;
+    }
+
+    public Staff(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
     public int getStaffId() {
         return staffId;
     }

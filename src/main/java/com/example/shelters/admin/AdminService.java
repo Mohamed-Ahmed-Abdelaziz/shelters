@@ -10,4 +10,14 @@ public class AdminService {
     public AdminService(AdminRepository adminRepository) {
         this.adminRepository = adminRepository;
     }
+
+    public int logIn(Admin admin) {
+        if(this.adminRepository.existsByEmail(admin.getEmail())) {
+            if(this.adminRepository.findByEmail(admin.getEmail())
+                    .get().getPassword().equals(admin.getPassword())){
+                return this.adminRepository.findByEmail(admin.getEmail()).get().getAdminId();
+            }
+        }
+        return -1;
+    }
 }

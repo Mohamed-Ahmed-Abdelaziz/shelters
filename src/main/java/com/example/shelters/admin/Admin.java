@@ -20,6 +20,11 @@ public class Admin {
     public Admin() {
     }
 
+    public Admin(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
     public int getAdminId() {
         return adminId;
     }
