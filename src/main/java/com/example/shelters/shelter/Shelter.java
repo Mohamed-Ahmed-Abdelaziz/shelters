@@ -24,6 +24,8 @@ public class Shelter {
     @OneToMany(mappedBy = "shelter", cascade = CascadeType.ALL)
     private List<Staff> staffs;
 
+//    @OneToMany(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "shelter_id", referencedColumnName = "shelterId")
     @OneToMany(mappedBy = "shelter", cascade = CascadeType.ALL)
     private List<Pet> pets;
 
@@ -69,22 +71,22 @@ public class Shelter {
         this.contact = contact;
     }
 
-    public Admin getAdmin() {
-        return admin;
-    }
-
-    public void setAdmin(Admin admin) {
-        this.admin = admin;
-    }
-
-    public List<Staff> getStaffs() {
-        return staffs;
-    }
-
-    public void setStaffs(List<Staff> staffs) {
-        this.staffs = staffs;
-    }
-
+//    public Admin getAdmin() {
+//        return admin;
+//    }
+//
+//    public void setAdmin(Admin admin) {
+//        this.admin = admin;
+//    }
+//
+//    public List<Staff> getStaffs() {
+//        return staffs;
+//    }
+//
+//    public void setStaffs(List<Staff> staffs) {
+//        this.staffs = staffs;
+//    }
+//
     public List<Pet> getPets() {
         return pets;
     }

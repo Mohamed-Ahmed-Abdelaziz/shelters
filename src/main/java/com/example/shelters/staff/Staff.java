@@ -92,11 +92,11 @@ public class Staff {
         this.contact = contact;
     }
 
-    public Shelter getShelter() {
-        return shelter;
-    }
-
-    public void setShelter(Shelter shelter) {
-        this.shelter = shelter;
-    }
+//    public Shelter getShelter() {
+//        return shelter;
+//    }
+//
+//    public void setShelter(Shelter shelter) {
+//        this.shelter = shelter;
+//    }
 }

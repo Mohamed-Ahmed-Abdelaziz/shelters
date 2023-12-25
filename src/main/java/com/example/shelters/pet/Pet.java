@@ -23,10 +23,34 @@ public class Pet {
     private Application application;
 
     @ManyToOne
-    @JoinColumn(name = "shelter_id")
+    @JoinColumn(name = "shelter_id", referencedColumnName = "shelterId")
     private Shelter shelter;
 
     public Pet() {
+    }
+
+    public Pet(int petId) {
+        this.petId = petId;
+    }
+
+    public Pet(String name, String species, String breed, int age, String gender, String healthStatus, String behaviour) {
+        this.name = name;
+        this.species = species;
+        this.breed = breed;
+        this.age = age;
+        this.gender = gender;
+        this.healthStatus = healthStatus;
+        this.behaviour = behaviour;
+    }
+        public Pet(String name, String species, String breed, int age, String gender, String healthStatus, String behaviour, Shelter shelter) {
+        this.name = name;
+        this.species = species;
+        this.breed = breed;
+        this.age = age;
+        this.gender = gender;
+        this.healthStatus = healthStatus;
+        this.behaviour = behaviour;
+        this.shelter = shelter;
     }
 
     public int getPetId() {
@@ -92,20 +116,23 @@ public class Pet {
     public void setBehaviour(String behaviour) {
         this.behaviour = behaviour;
     }
-
-    public Application getApplication() {
-        return application;
+    public int getShelterId(){
+        return shelter.getShelterId();
     }
 
-    public void setApplication(Application application) {
-        this.application = application;
-    }
-
-    public Shelter getShelter() {
-        return shelter;
-    }
-
-    public void setShelter(Shelter shelter) {
-        this.shelter = shelter;
-    }
+//    public Application getApplication() {
+//        return application;
+//    }
+//
+//    public void setApplication(Application application) {
+//        this.application = application;
+//    }
+//
+//    public Shelter getShelter() {
+//        return shelter;
+//    }
+//
+//    public void setShelter(Shelter shelter) {
+//        this.shelter = shelter;
+//    }
 }

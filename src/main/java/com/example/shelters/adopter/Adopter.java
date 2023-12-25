@@ -23,6 +23,10 @@ public class Adopter {
     public Adopter() {
     }
 
+    public Adopter(int adopterId) {
+        this.adopterId = adopterId;
+    }
+
     public Adopter(String email, String password) {
         this.email = email;
         this.password = password;
@@ -75,11 +79,11 @@ public class Adopter {
         this.contact = contact;
     }
 
-    public List<Application> getApplications() {
-        return applications;
-    }
-
-    public void setApplications(List<Application> applications) {
-        this.applications = applications;
-    }
+//    public List<Application> getApplications() {
+//        return applications;
+//    }
+//
+//    public void setApplications(List<Application> applications) {
+//        this.applications = applications;
+//    }
 }

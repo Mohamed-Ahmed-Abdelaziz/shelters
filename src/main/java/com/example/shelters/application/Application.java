@@ -28,6 +28,13 @@ public class Application {
     public Application() {
     }
 
+    public Application(String status, Pet pet, Shelter shelter, Adopter adopter) {
+        this.status = status;
+        this.pet = pet;
+        this.shelter = shelter;
+        this.adopter = adopter;
+    }
+
     public int getApplicationId() {
         return applicationId;
     }
@@ -43,28 +50,31 @@ public class Application {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    public Pet getPet() {
-        return pet;
+    public String getPetName(){
+        return pet.getName();
     }
 
-    public void setPet(Pet pet) {
-        this.pet = pet;
-    }
-
-    public Shelter getShelter() {
-        return shelter;
-    }
-
-    public void setShelter(Shelter shelter) {
-        this.shelter = shelter;
-    }
-
-    public Adopter getAdopter() {
-        return adopter;
-    }
-
-    public void setAdopter(Adopter adopter) {
-        this.adopter = adopter;
-    }
+//    public Pet getPet() {
+//        return pet;
+//    }
+//
+//    public void setPet(Pet pet) {
+//        this.pet = pet;
+//    }
+//
+//    public Shelter getShelter() {
+//        return shelter;
+//    }
+//
+//    public void setShelter(Shelter shelter) {
+//        this.shelter = shelter;
+//    }
+//
+//    public Adopter getAdopter() {
+//        return adopter;
+//    }
+//
+//    public void setAdopter(Adopter adopter) {
+//        this.adopter = adopter;
+//    }
 }
