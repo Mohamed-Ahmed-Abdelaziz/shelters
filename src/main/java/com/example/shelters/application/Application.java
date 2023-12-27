@@ -75,6 +75,19 @@ public class Application {
     public String getPetName(){
         return pet.getName();
     }
+    public String getPetSpecies(){
+        return pet.getSpecies();
+    }
+
+    public String getAdopterName(){
+        return adopter.getName();
+    }
+    public int getAdopterContact(){
+        return adopter.getContact();
+    }
+    public int getAdopterId(){
+        return adopter.getAdopterId();
+    }
 
     public String getPetCareExperience() {
         return petCareExperience;

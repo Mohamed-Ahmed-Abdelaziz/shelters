@@ -1,6 +1,7 @@
 package com.example.shelters.adopter;
 
 import com.example.shelters.application.Application;
+import com.example.shelters.notification.Notification;
 import com.example.shelters.staff.Staff;
 import jakarta.persistence.*;
 
@@ -19,6 +20,10 @@ public class Adopter {
 
     @OneToMany(mappedBy = "adopter", cascade = CascadeType.ALL)
     private List<Application> applications;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "adopter_id", referencedColumnName = "adopterId")
+    private List<Notification> notifications;
 
     public Adopter() {
     }
@@ -79,7 +84,14 @@ public class Adopter {
         this.contact = contact;
     }
 
-//    public List<Application> getApplications() {
+    public List<Notification> getNotifications() {
+        return notifications;
+    }
+
+    public void setNotifications(List<Notification> notifications) {
+        this.notifications = notifications;
+    }
+    //    public List<Application> getApplications() {
 //        return applications;
 //    }
 //
