@@ -92,6 +92,9 @@ public class Staff {
         this.contact = contact;
     }
 
+    public int getShelterId(){
+        return shelter.getShelterId();
+    }
 //    public Shelter getShelter() {
 //        return shelter;
 //    }

@@ -18,7 +18,7 @@ public class ApplicationController {
     public List<Application> getApplications(){
         return applicationService.getApplications();
     }
-    @PostMapping(path = "apply/{adopterId}/{petId}")
+    @PostMapping(path = "apply/{adopterId}/{petId}") // petCareExperience, petPreferences, finantialInfo, lifeStyle
     public boolean applyApplication(
             @PathVariable int adopterId,
             @PathVariable int petId,
@@ -27,13 +27,13 @@ public class ApplicationController {
         return applicationService.applyApplication(adopterId, petId, application);
     }
 
-    @PutMapping(path = "acceptApplication/{applicationId}")
-    public boolean acceptApplication(@PathVariable int applicationId){
-        return applicationService.acceptApplication(applicationId);
+    @PutMapping(path = "acceptApplication/{applicationId}/{staffId}")
+    public boolean acceptApplication(@PathVariable int applicationId, @PathVariable int staffId){
+        return applicationService.acceptApplication(applicationId, staffId);
     }
-    @PutMapping(path = "rejectApplication/{applicationId}")
-    public boolean rejectApplication(@PathVariable int applicationId){
-        return applicationService.rejectApplication(applicationId);
+    @PutMapping(path = "rejectApplication/{applicationId}/{staffId}")
+    public boolean rejectApplication(@PathVariable int applicationId, @PathVariable int staffId){
+        return applicationService.rejectApplication(applicationId, staffId);
     }
 
 }

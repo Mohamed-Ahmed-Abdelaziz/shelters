@@ -19,8 +19,8 @@ public class PetController {
         return petService.getPets();
     }
 
-    @PostMapping(path = "addPet/{shelterId}")
-    public boolean addPet(@PathVariable int shelterId, @RequestBody Pet pet){
-        return this.petService.addPet(shelterId, pet);
+    @PostMapping(path = "addPet/{staffId}")
+    public boolean addPet(@PathVariable int staffId, @RequestBody Pet pet){
+        return this.petService.addPet(staffId, pet);
     }
 }
