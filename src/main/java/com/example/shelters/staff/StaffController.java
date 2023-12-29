@@ -2,11 +2,13 @@ package com.example.shelters.staff;
 
 import com.example.shelters.admin.Admin;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 @CrossOrigin
@@ -23,11 +25,20 @@ public class StaffController {
         return staffService.getStaffs();
     }
     @PostMapping("logIn")
-    public int logIn(@RequestBody Staff staff) throws IOException {
-        return staffService.logIn(staff);
+    public ResponseEntity<Object> logIn(@RequestBody Staff staff) throws IOException {
+        try {
+            return new ResponseEntity<>(staffService.logIn(staff), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), org.springframework.http.HttpStatus.BAD_REQUEST);
+        }
     }
     @PostMapping("signUp/{shelterId}")
-    public int signUp(@PathVariable int shelterId, @RequestBody Staff staff) throws IOException {
-        return staffService.signUp(staff, shelterId);
+    public ResponseEntity<String> signUp(@PathVariable int shelterId, @RequestBody Staff staff) throws IOException {
+        try {
+            staffService.signUp(staff, shelterId);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), org.springframework.http.HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>("Staff created successfully", org.springframework.http.HttpStatus.CREATED);
     }
 }

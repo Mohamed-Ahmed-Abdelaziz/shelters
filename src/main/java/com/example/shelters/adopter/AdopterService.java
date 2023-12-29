@@ -26,13 +26,17 @@ public class AdopterService {
                     .get().getPassword().equals(adopter.getPassword())){
                 return this.adopterRepository.findByEmail(adopter.getEmail()).get().getAdopterId();
             }
+            else {
+                throw new IllegalStateException("Password is incorrect");
+            }
+        } else {
+            throw new IllegalStateException("Email does not exist");
         }
-        return -1;
     }
 
     public int signUp(Adopter adopter) {
         if(this.adopterRepository.existsByEmail(adopter.getEmail())){
-            return -1;
+            throw new IllegalStateException("Email already exists");
         }
         this.adopterRepository.save(adopter);
         return this.adopterRepository.findByEmail(adopter.getEmail()).get().getAdopterId();
