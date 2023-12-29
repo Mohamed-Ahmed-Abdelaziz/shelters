@@ -24,6 +24,7 @@ public class Shelter {
     @OneToMany(mappedBy = "shelter", cascade = CascadeType.ALL)
     private List<Staff> staffs;
 
+
 //    @OneToMany(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "shelter_id", referencedColumnName = "shelterId")
     @OneToMany(mappedBy = "shelter", cascade = CascadeType.ALL)
@@ -33,6 +34,13 @@ public class Shelter {
     private List<Application> applications;
 
     public Shelter() {
+    }
+
+    public Shelter(String name, String location, String contact, Admin admin) {
+        this.name = name;
+        this.location = location;
+        this.contact = contact;
+        this.admin = admin;
     }
 
     public Shelter(int shelterId) {

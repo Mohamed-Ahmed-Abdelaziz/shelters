@@ -15,9 +15,15 @@ public class Admin {
 
     @OneToOne
     @JoinColumn(name = "shelter_id")
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "admin_id", referencedColumnName = "adminId")
     private Shelter shelter;
 
     public Admin() {
+    }
+
+    public Admin(int adminId) {
+        this.adminId = adminId;
     }
 
     public Admin(String email, String password) {
@@ -53,7 +59,10 @@ public class Admin {
 //        return shelter;
 //    }
 //
-//    public void setShelter(Shelter shelter) {
-//        this.shelter = shelter;
-//    }
+    public void setShelter(Shelter shelter) {
+        this.shelter = shelter;
+    }
+    public int getShelterId(){
+        return shelter.getShelterId();
+    }
 }
