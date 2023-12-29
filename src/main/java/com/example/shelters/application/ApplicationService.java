@@ -1,6 +1,5 @@
 package com.example.shelters.application;
 
-import com.example.shelters.admin.AdminRepository;
 import com.example.shelters.adopter.Adopter;
 import com.example.shelters.adopter.AdopterRepository;
 import com.example.shelters.notification.Notification;
@@ -42,7 +41,7 @@ public class ApplicationService {
                 "pending",
                 application.getPetCareExperience(),
                 application.getPetPreferences(),
-                application.getFinantialInfo(),
+                application.getFinancialInfo(),
                 application.getLifeStyle(),
                 new Pet(petId),
                 new Shelter(shelterId),

@@ -15,10 +15,12 @@ public class ApplicationController {
     public ApplicationController(ApplicationService applicationService){
         this.applicationService = applicationService;
     }
+    @CrossOrigin
     @GetMapping
     public List<Application> getApplications(){
         return applicationService.getApplications();
     }
+    @CrossOrigin
     @PostMapping(path = "apply/{adopterId}/{petId}") // petCareExperience, petPreferences, finantialInfo, lifeStyle
     public boolean applyApplication(
             @PathVariable int adopterId,
@@ -27,11 +29,12 @@ public class ApplicationController {
     ){
         return applicationService.applyApplication(adopterId, petId, application);
     }
-
+    @CrossOrigin
     @PutMapping(path = "acceptApplication/{applicationId}/{staffId}")
     public boolean acceptApplication(@PathVariable int applicationId, @PathVariable int staffId){
         return applicationService.acceptApplication(applicationId, staffId);
     }
+    @CrossOrigin
     @PutMapping(path = "rejectApplication/{applicationId}/{staffId}")
     public boolean rejectApplication(@PathVariable int applicationId, @PathVariable int staffId){
         return applicationService.rejectApplication(applicationId, staffId);

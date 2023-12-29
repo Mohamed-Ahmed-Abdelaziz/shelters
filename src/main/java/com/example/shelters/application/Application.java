@@ -14,7 +14,7 @@ public class Application {
     private String status;
     private String petCareExperience;
     private String petPreferences;
-    private String finantialInfo;
+    private String financialInfo;
     private String lifeStyle;
 
     @OneToOne
@@ -32,18 +32,18 @@ public class Application {
     public Application() {
     }
 
-    public Application(String petCareExperience, String petPreferences, String finantialInfo, String lifeStyle) {
+    public Application(String petCareExperience, String petPreferences, String financialInfo, String lifeStyle) {
         this.petCareExperience = petCareExperience;
         this.petPreferences = petPreferences;
-        this.finantialInfo = finantialInfo;
+        this.financialInfo = financialInfo;
         this.lifeStyle = lifeStyle;
     }
 
-    public Application(String status, String petCareExperience, String petPreferences, String finantialInfo, String lifeStyle, Pet pet, Shelter shelter, Adopter adopter) {
+    public Application(String status, String petCareExperience, String petPreferences, String financialInfo, String lifeStyle, Pet pet, Shelter shelter, Adopter adopter) {
         this.status = status;
         this.petCareExperience = petCareExperience;
         this.petPreferences = petPreferences;
-        this.finantialInfo = finantialInfo;
+        this.financialInfo = financialInfo;
         this.lifeStyle = lifeStyle;
         this.pet = pet;
         this.shelter = shelter;
@@ -105,12 +105,12 @@ public class Application {
         this.petPreferences = petPreferences;
     }
 
-    public String getFinantialInfo() {
-        return finantialInfo;
+    public String getFinancialInfo() {
+        return financialInfo;
     }
 
-    public void setFinantialInfo(String finantialInfo) {
-        this.finantialInfo = finantialInfo;
+    public void setFinancialInfo(String finantialInfo) {
+        this.financialInfo = finantialInfo;
     }
 
     public String getLifeStyle() {
