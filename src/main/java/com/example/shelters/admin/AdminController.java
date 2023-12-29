@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 
 @RestController
+@CrossOrigin
 @RequestMapping(path = "admins")
 public class AdminController {
     private AdminService adminService;
