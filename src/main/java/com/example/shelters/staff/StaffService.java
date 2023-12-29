@@ -3,15 +3,20 @@ package com.example.shelters.staff;
 import com.example.shelters.admin.Admin;
 import com.example.shelters.admin.AdminRepository;
 import com.example.shelters.shelter.Shelter;
+import com.example.shelters.shelter.ShelterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class StaffService {
     private final StaffRepository staffRepository;
+    private final ShelterRepository shelterRepository;
     @Autowired
-    public StaffService(StaffRepository staffRepository) {
+    public StaffService(StaffRepository staffRepository, ShelterRepository shelterRepository) {
         this.staffRepository = staffRepository;
+        this.shelterRepository = shelterRepository;
     }
 
     public int logIn(Staff staff) {
@@ -34,9 +39,13 @@ public class StaffService {
                 staff.getName(),
                 staff.getRole(),
                 staff.getContact(),
-                new Shelter(shelterId)
+                shelterRepository.findById(shelterId).get()
         );
-        this.staffRepository.save(staff);
+        this.staffRepository.save(staff1);
         return this.staffRepository.findByEmail(staff.getEmail()).get().getStaffId();
+    }
+
+    public List<Staff> getStaffs() {
+        return staffRepository.findAll();
     }
 }

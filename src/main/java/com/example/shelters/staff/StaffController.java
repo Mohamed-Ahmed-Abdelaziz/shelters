@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 @RequestMapping(path = "staffs")
@@ -16,6 +17,10 @@ public class StaffController {
         this.staffService = staffService;
     }
 
+    @GetMapping
+    public List<Staff> getStaffs(){
+        return staffService.getStaffs();
+    }
     @PostMapping("logIn")
     public int logIn(@RequestBody Staff staff) throws IOException {
         return staffService.logIn(staff);
