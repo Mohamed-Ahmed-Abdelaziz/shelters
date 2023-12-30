@@ -2,6 +2,7 @@ package com.example.shelters.staff;
 
 import com.example.shelters.admin.Admin;
 import com.example.shelters.admin.AdminRepository;
+import com.example.shelters.application.Application;
 import com.example.shelters.shelter.Shelter;
 import com.example.shelters.shelter.ShelterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,5 +52,10 @@ public class StaffService {
 
     public List<Staff> getStaffs() {
         return staffRepository.findAll();
+    }
+
+    public List<Application> getStaffApplications(int staffId) {
+        int shelterId = staffRepository.findById(staffId).get().getShelterId();
+        return shelterRepository.findById(shelterId).get().getApplications();
     }
 }

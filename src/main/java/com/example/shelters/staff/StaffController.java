@@ -1,6 +1,7 @@
 package com.example.shelters.staff;
 
 import com.example.shelters.admin.Admin;
+import com.example.shelters.application.Application;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,5 +41,9 @@ public class StaffController {
             return new ResponseEntity<>(e.getMessage(), org.springframework.http.HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<>("Staff created successfully", org.springframework.http.HttpStatus.CREATED);
+    }
+    @GetMapping(path = "getApplications/{staffId}")
+    public List<Application> getStaffApplications(@PathVariable int staffId){
+        return staffService.getStaffApplications(staffId);
     }
 }
